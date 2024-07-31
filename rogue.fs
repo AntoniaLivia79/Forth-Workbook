@@ -109,3 +109,5 @@ TRUE running !
 : start-game ( -- )
   game-loop ;
 
+start-game
+
