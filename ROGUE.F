@@ -30,14 +30,18 @@ TRUE running !
 
   27 EMIT [CHAR] [ EMIT [CHAR] 2 EMIT [CHAR] J EMIT ;
 
-: draw-map ( -- )
+: draw-map ( -- ) 
 
   HEIGHT 0 DO
     WIDTH 0 DO
       I player-x @ = J player-y @ = AND IF
         ." @"
+      ELSE 
+        I 0 = I WIDTH 1- = OR J 0 = J HEIGHT 1- = OR OR IF 
+          ." #"
       ELSE
         ." ."
+        THEN
       THEN
     LOOP
     CR
